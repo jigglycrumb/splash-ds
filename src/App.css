@@ -1,0 +1,42 @@
+.App {
+  text-align: center;
+}
+
+#logo {
+  margin: 20px 0;
+}
+
+#options {
+  width: 550px;
+  margin: 0 auto;
+}
+
+.option {
+  align-items: center;
+  display: flex;
+}
+
+.option .input-spacer {
+  display: flex;
+  justify-content: flex-end;
+  min-width: 150px;
+}
+
+.option label {
+  margin: 8px;
+}
+
+.konvajs-content {
+  margin: 0 auto;
+}
+
+/* #icon {
+  border: 1px solid tomato;
+  height: 48px;
+  width: 48px;
+} */
+
+button {
+  margin: 8px;
+  padding: 8px 16px;
+}

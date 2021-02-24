@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e2ae9d48.chunk.css",
+    "main.js": "/static/js/main.e955dfd9.chunk.js",
+    "main.js.map": "/static/js/main.e955dfd9.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.63da5e00.js",
+    "runtime-main.js.map": "/static/js/runtime-main.63da5e00.js.map",
+    "static/js/2.7c113cb5.chunk.js": "/static/js/2.7c113cb5.chunk.js",
+    "static/js/2.7c113cb5.chunk.js.map": "/static/js/2.7c113cb5.chunk.js.map",
+    "static/js/3.36b2bde5.chunk.js": "/static/js/3.36b2bde5.chunk.js",
+    "static/js/3.36b2bde5.chunk.js.map": "/static/js/3.36b2bde5.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.e2ae9d48.chunk.css.map": "/static/css/main.e2ae9d48.chunk.css.map",
+    "static/js/2.7c113cb5.chunk.js.LICENSE.txt": "/static/js/2.7c113cb5.chunk.js.LICENSE.txt",
+    "static/media/new-3ds.c72562d7.png": "/static/media/new-3ds.c72562d7.png",
+    "static/media/splash-ds-logo.3acf7fdb.png": "/static/media/splash-ds-logo.3acf7fdb.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.63da5e00.js",
+    "static/js/2.7c113cb5.chunk.js",
+    "static/css/main.e2ae9d48.chunk.css",
+    "static/js/main.e955dfd9.chunk.js"
+  ]
+}
