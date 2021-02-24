@@ -1,5 +1,6 @@
 {
   "name": "splash-ds",
+  "homepage": "https://hpcodecraft.github.io/splash-ds/",
   "version": "1.0",
   "private": true,
   "dependencies": {
