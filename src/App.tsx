@@ -296,10 +296,10 @@ const App = () => {
   useEffect(() => {
     const downloadZip = () => {
       const zip = new JSZip();
-      zip.file('splash.bin', splashDataTop, { binary: true });
-      zip.file('splashbottom.bin', splashDataBottom, { binary: true });
-      zip.file('preview.png', previewImage.slice(22), { base64: true });
-      // zip.file('icon.png', iconImage.slice(22), { base64: true });
+      zip.file('splash.bin', splashDataTop, { binary: true, createFolders: false });
+      zip.file('splashbottom.bin', splashDataBottom, { binary: true, createFolders: false });
+      zip.file('preview.png', previewImage.slice(22), { base64: true, createFolders: false });
+      // zip.file('icon.png', iconImage.slice(22), { base64: true, createFolders: false});
 
       zip.generateAsync({ type: "blob" }).then((blob) => {
         const reader = new FileReader();
@@ -330,7 +330,7 @@ const App = () => {
   return (
     <div className="App">
       <img id="logo" alt="logo" src={logoImage} />
-      <h3>boot splash creator for Nintendo 3DS systems</h3>
+      <h3>Splash screen creator for Nintendo 3DS systems</h3>
       <div onDragOver={handleCancel} onDrop={handleDrop}>
         <div id="options">
           <div className="option">

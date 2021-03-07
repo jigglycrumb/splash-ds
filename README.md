@@ -41,7 +41,13 @@ To use the splash screen, copy *splash.bin* and *splashbottom.bin* to the `/luma
 
 - [Anemone](https://github.com/astronautlevel2/Anemone3DS/) compatibility
 
-  I've looked into this already and preview.png should be compatible. Still missing is the icon (work on that has started a bit) and the info.smdh file used to display splash infos. Also, Anemone doesn't seem to like the zip files but I haven't found out why. Still investigating... Previews aren't shown, that's what I can say for now.
+  I'm working on this and am halfway there. Still missing is the icon and the info.smdh file used to display splash infos.
+  Already working:
+    - Zip files appear in the splash list
+    - Installation works
+    - Preview works (press `Y`)
+
+  To use a splash screen with Anemone, rename the `splash.zip` to something more accurate and copy it to the `/Splashes` folder on your SD card.
 - Editor for START/SELECT info text.
 
   Adding markers for START/SELECT options to the splash screen to show how to get to Luma settings and Godmode9.
