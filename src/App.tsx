@@ -2,13 +2,17 @@ import JSZip from 'jszip';
 import React, { DragEvent, useEffect, useState } from "react";
 import { Image, Layer, Rect, Stage, Text } from "react-konva";
 
-import { SplashImage } from './SplashImage'
+import { MetaSection } from './components/MetaSection'
+import { SplashImage } from './components/SplashImage'
 
 // import original3DsImage from "./assets/original-3ds.png";
 import logoImage from "./assets/splash-ds-logo.png";
 import new3DsImage from "./assets/new-3ds.png";
 
-import './App.css';
+import './styles/App.css';
+import './styles/smdh_creator.css';
+
+import { loadImage } from './utils/loadImage';
 
 // @ts-expect-error
 window.Konva.pixelRatio = 1;
@@ -40,16 +44,6 @@ const screenConfig: IIndexable = {
 //     width: 48,
 //     height: 48,
 // }
-
-const loadImage = (file: any) => {
-  return new Promise((resolve, reject) => {
-    const img = new window.Image();
-    img.onload = function () {
-      resolve(img);
-    };
-    img.src = file;
-  });
-};
 
 // const scaleImage = (image: CanvasImageSource) => {
 //   const scaledCanvas = document.createElement('canvas');
@@ -365,6 +359,7 @@ const App = () => {
             {dsImage && <Image image={dsImage} listening={false} opacity={1 - dsOpacity} />}
           </Layer>
         </Stage>
+        <MetaSection />
         {/* <div id="icon">
         </div> */}
         <button onClick={splishSplash} disabled={!splashImage}>download splash screen</button>
