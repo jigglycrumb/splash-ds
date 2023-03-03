@@ -57,9 +57,6 @@ To use the splash screen, copy _splash.bin_ and _splashbottom.bin_ to the `/luma
 
   Adding markers for START/SELECT options to the splash screen to show how to get to Luma settings and Godmode9.
 
-- _Maybe_ compatibility with DS and DSi systems (I don't own these and don't know if custom splashes even exist, but open an issue if interested)
-- _Maybe_ compatibility with older/other CFWs (open an issue if interested, I only have Luma and I don't know if anyone still uses something else)
-
 ### Questions?
 
 If you want to report bugs or request features please open an issue in this repository.
