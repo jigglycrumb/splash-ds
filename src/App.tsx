@@ -12,7 +12,12 @@ import new3DsImage from "./assets/new-3ds.png";
 import './styles/App.css';
 import './styles/smdh_creator.css';
 
+
+import { convertImageToBin } from './utils/convertImageToBin';
+import { downloadFile } from './utils/downloadFile';
 import { loadImage } from './utils/loadImage';
+import { rotateImage } from './utils/rotateImage';
+import { SMDH } from './utils/SMDH'
 
 // @ts-expect-error
 window.Konva.pixelRatio = 1;
@@ -57,24 +62,6 @@ const screenConfig: IIndexable = {
 //   return scaledCanvas;
 // }
 
-const rotateImage = (image: CanvasImageSource) => {
-  const rotationCanvas = document.createElement('canvas');
-  rotationCanvas.width = image.height as number;
-  rotationCanvas.height = image.width as number;
-
-  const rotationContext = rotationCanvas.getContext("2d");
-
-  if(rotationContext) {
-    rotationContext.save();
-    rotationContext.translate(rotationCanvas.width/2, rotationCanvas.height/2);
-    rotationContext.rotate(90 * Math.PI/180);
-    rotationContext.drawImage(image, -image.width/2, -image.height/2);
-    rotationContext.restore();
-  }
-
-  return rotationCanvas;
-}
-
 // const previewImage = (canvas: HTMLCanvasElement) => {
 //   const imageUrl = canvas.toDataURL("image/png");
 //   const image = document.createElement('img');
@@ -84,30 +71,6 @@ const rotateImage = (image: CanvasImageSource) => {
 //   document.getElementById('preview')?.appendChild(image);
 // }
 
-const convertImageToBin = (canvas: HTMLCanvasElement) => {
-  if(canvas) {
-    const canvasData = canvas?.getContext('2d')?.getImageData(0, 0, canvas.width, canvas.height).data;
-    let fileData = '';
-
-    if(canvasData) {
-      for(var i = 0; i < canvasData.length; i += 4) {
-        fileData += String.fromCharCode(canvasData[i+2], canvasData[i+1], canvasData[i]);
-      }
-    }
-
-    return fileData;
-  }
-}
-
-const downloadFile = (url: string, name: string) => {
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = name;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
-
 const App = () => {
   const [splashImage, setSplashImage] = useState(undefined);
   const [splashDataTop, setSplashDataTop] = useState('');
@@ -115,12 +78,15 @@ const App = () => {
   const [dsImage, setDsImage] = useState(undefined);
   const [previewImage, setPreviewImage] = useState('');
   // const [iconImage, setIconImage] = useState('');
+  const [smdhFile, setSmdhFile] = useState<Blob | undefined>(undefined);
 
   const [dsOpacity, setDsOpacity] = useState(0)
   const [keepRatio, setKeepRatio] = useState(true)
   const [backgroundColor, setBackgroundColor] = useState('#228ae2');
 
   const [downloadRequested, setDownloadRequested] = useState(false);
+
+  const smdh = new SMDH();
 
   const reset = () => {
     setSplashImage(undefined);
@@ -246,6 +212,10 @@ const App = () => {
   }
 
   const splishSplash = () => {
+    const smdhBlob = smdh.save();
+    console.log('splishSplash smdh', smdhBlob);
+    setSmdhFile(smdhBlob);
+
     setDownloadRequested(true);
   }
 
@@ -293,7 +263,9 @@ const App = () => {
       zip.file('splash.bin', splashDataTop, { binary: true, createFolders: false });
       zip.file('splashbottom.bin', splashDataBottom, { binary: true, createFolders: false });
       zip.file('preview.png', previewImage.slice(22), { base64: true, createFolders: false });
-      // zip.file('icon.png', iconImage.slice(22), { base64: true, createFolders: false});
+      if(smdhFile) {
+        zip.file('info.smdh', smdhFile, { binary: true, createFolders: false});
+      }
 
       zip.generateAsync({ type: "blob" }).then((blob) => {
         const reader = new FileReader();
@@ -359,7 +331,7 @@ const App = () => {
             {dsImage && <Image image={dsImage} listening={false} opacity={1 - dsOpacity} />}
           </Layer>
         </Stage>
-        <MetaSection />
+        <MetaSection smdh={smdh} />
         {/* <div id="icon">
         </div> */}
         <button onClick={splishSplash} disabled={!splashImage}>download splash screen</button>

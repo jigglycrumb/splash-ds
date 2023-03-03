@@ -1,4 +1,7 @@
 /* MarcFile.js 20150922 by Marc */
+
+// import { downloadFile } from "./downloadFile";
+
 function MarcFile(source, func) {
   if (typeof window.FileReader !== "function") {
     alert("Your browser doesn't support FileReader.");
@@ -116,25 +119,18 @@ MarcFile.prototype.save = function () {
     }
   }
 
-  console.log("MarcFile.save", blob);
+  // console.log("MarcFile.save", blob);
 
-  const reader = new FileReader();
-  reader.readAsDataURL(blob);
-  reader.onloadend = function () {
-    const base64data = reader.result;
-    if (base64data) {
-      downloadFile(base64data, "info.smdh");
-    }
-  };
-};
+  // const reader = new FileReader();
+  // reader.readAsDataURL(blob);
+  // reader.onloadend = function () {
+  //   const base64data = reader.result;
+  //   if (base64data) {
+  //     downloadFile(base64data, "info.smdh");
+  //   }
+  // };
 
-const downloadFile = (url, name) => {
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = name;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  return blob;
 };
 
 export { MarcFile };

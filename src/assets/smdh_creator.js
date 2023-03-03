@@ -16,25 +16,25 @@ function addEvent(e, ev, f) {
 
 var smdh, tempImage, tempImageReader, tempFile, tempFileLoadFunction;
 
-function importBigCanvas() {
-  tempImageReader.readAsDataURL(el("file-load").files[0]);
-}
-function importSmallCanvas() {
-  tempImageReader.readAsDataURL(el("file-load").files[0]);
-}
+// function importBigCanvas() {
+//   tempImageReader.readAsDataURL(el("file-load").files[0]);
+// }
+// function importSmallCanvas() {
+//   tempImageReader.readAsDataURL(el("file-load").files[0]);
+// }
 
-function clickImportBigCanvas() {
-  tempFileLoadFunction = importBigCanvas;
-  el("file-load").click();
-}
-function clickImportSmallCanvas() {
-  tempFileLoadFunction = importSmallCanvas;
-  el("file-load").click();
-}
-function clickLoadSMDH() {
-  tempFileLoadFunction = loadSMDH;
-  el("file-load").click();
-}
+// function clickImportBigCanvas() {
+//   tempFileLoadFunction = importBigCanvas;
+//   el("file-load").click();
+// }
+// function clickImportSmallCanvas() {
+//   tempFileLoadFunction = importSmallCanvas;
+//   el("file-load").click();
+// }
+// function clickLoadSMDH() {
+//   tempFileLoadFunction = loadSMDH;
+//   el("file-load").click();
+// }
 // function clickSaveSMDH() {
 //   smdh.save();
 // }

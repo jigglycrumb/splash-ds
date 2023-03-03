@@ -155,16 +155,16 @@ SMDH.prototype.save = function () {
     var longDescription = globalLongDescription;
     var publisher = globalPublisher;
 
-    if (el("row-short-description" + i)) {
-      if (el("short-description" + i).value !== "")
-        shortDescription = el("short-description" + i).value;
+    // if (el("row-short-description" + i)) {
+    //   if (el("short-description" + i).value !== "")
+    //     shortDescription = el("short-description" + i).value;
 
-      if (el("long-description" + i).value !== "")
-        longDescription = el("long-description" + i).value;
+    //   if (el("long-description" + i).value !== "")
+    //     longDescription = el("long-description" + i).value;
 
-      if (el("publisher" + i).value !== "")
-        publisher = el("publisher" + i).value;
-    }
+    //   if (el("publisher" + i).value !== "")
+    //     publisher = el("publisher" + i).value;
+    // }
 
     this.applicationTitles[i].shortDescription.set(shortDescription);
     this.applicationTitles[i].longDescription.set(longDescription);
@@ -210,7 +210,7 @@ SMDH.prototype.save = function () {
 
   console.log(this.bigIconData);
 
-  this.file.save();
+  return this.file.save();
 };
 
 SMDH.prototype.convertIcon = function (bigIcon, toBitmap) {

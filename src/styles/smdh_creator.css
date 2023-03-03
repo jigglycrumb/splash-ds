@@ -1,14 +1,14 @@
 /* SMDH Creator by Marc Robledo 2015 */
 
 h1,
-/* #file-form, */
+#file-form,
 #lang-info {
   display: none;
 }
 
 .home-block {
   max-width: 640px;
-  margin: 60px auto 0;
+  margin: 0 auto 50px auto;
   padding: 20px;
   color: black;
   text-shadow: initial;
@@ -31,7 +31,10 @@ h1,
   text-align: right;
 }
 
-/* canvas {
+#big-icon {
+  width: 96px;
+  height: 96px;
+
   image-rendering: optimizeSpeed;
   image-rendering: -moz-crisp-edges;
   image-rendering: -webkit-optimize-contrast;
@@ -40,17 +43,12 @@ h1,
   -ms-interpolation-mode: nearest-neighbor;
   padding: 4px !important;
   cursor: pointer;
-} */
-
-#big-icon {
-  width: 96px;
-  height: 96px;
 }
-
+/* 
 #small-icon {
   width: 48px;
   height: 48px;
-}
+} */
 
 .input {
   padding: 6px 8px;
@@ -102,109 +100,4 @@ h1,
   border-color: #888;
   text-shadow: none;
   box-shadow: 0 2px 8px -3px rgba(0, 0, 0, 0.75) inset;
-}
-
-.blue-button {
-  background-color: #21759b !important;
-  background-image: linear-gradient(to bottom, #2a95c5, #21759b) !important;
-  border-color: #21759b #21759b #1e6a8d !important;
-  text-shadow: 0 -1px 0 #20749a !important;
-  color: white !important;
-}
-
-.blue-button:hover {
-  background-color: #278ab7 !important;
-  background-image: linear-gradient(to bottom, #2e9fd2, #21759b) !important;
-  border-color: #1b607f !important;
-  text-shadow: 0 -1px 0 #1b6080 !important;
-  color: white !important;
-}
-
-.blue-button:active {
-  background: linear-gradient(to bottom, #21759b, #278ab7) repeat scroll 0 0
-    #1b607f !important;
-  border-color: #124560 #0e74a3 #0e74a3 !important;
-  text-shadow: 0 -1px 0 #177ea4 !important;
-  color: #dde7ec !important;
-}
-
-.flag {
-  background-image: url(../assets/flags.png);
-  width: 16px;
-  height: 11px;
-  display: inline-block;
-}
-
-.flag0 {
-  background-position: 0px 0px;
-}
-
-.flag1 {
-  background-position: -16px 0px;
-}
-
-.flag2 {
-  background-position: -32px 0px;
-}
-
-.flag3 {
-  background-position: -48px 0px;
-}
-
-.flag4 {
-  background-position: -64px 0px;
-}
-
-.flag5 {
-  background-position: -80px 0px;
-}
-
-.flag6 {
-  background-position: -96px 0px;
-}
-
-.flag7 {
-  background-position: -112px 0px;
-}
-
-.flag8 {
-  background-position: -128px 0px;
-}
-
-.flag9 {
-  background-position: -144px 0px;
-}
-
-.flag10 {
-  background-position: -160px 0px;
-}
-
-.flag11 {
-  background-position: -176px 0px;
-}
-
-/* responsive design */
-@media only screen and (max-width: 841px) {
-  .home-block {
-    margin-top: 80px;
-  }
-}
-
-@media only screen and (max-width: 641px) {
-  .home-block,
-  .button,
-  .input {
-    font-size: 13px;
-  }
-}
-
-@media only screen and (max-width: 481px) {
-  .home-block,
-  .button,
-  .input {
-    font-size: 12px;
-  }
-  .input {
-    width: 90%;
-  }
 }
