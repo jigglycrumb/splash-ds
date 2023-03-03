@@ -5,7 +5,10 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta name="keywords" content="nintendo, ds, 3ds, splash, screen, creator, luma, boot, online" />
+    <meta
+      name="keywords"
+      content="nintendo, ds, 3ds, splash, screen, creator, luma, boot, online"
+    />
     <meta
       name="description"
       content="A splash screen creator for Nintendo 3DS systems"
@@ -34,16 +37,30 @@
       %REACT_APP_NAME% %REACT_APP_VERSION%
       <br />
       <br />
-      &copy;<a href="http://hpcodecraft.me" target="_blank" rel="noreferrer">hpcodecraft</a>
-            <script>
-              document.write(new Date().getFullYear());
-            </script>
+      &copy;<a href="http://jigglycrumb.me" target="_blank" rel="noreferrer"
+        >jigglycrumb</a
+      >
+      <script>
+        document.write(new Date().getFullYear());
+      </script>
       <br />
-      .bin file creation code ported from <a href="https://xem.github.io/3DShomebrew/tools/image-to-bin.html"
-        target="_blank" rel="noreferrer">xem's image to BIN converter</a>
+      .bin file creation code ported from
+      <a
+        href="https://xem.github.io/3DShomebrew/tools/image-to-bin.html"
+        target="_blank"
+        rel="noreferrer"
+        >xem's image to BIN converter</a
+      >
       <br />
       <br />
-      check the <a href="https://github.com/hpcodecraft/splash-ds#readme" target="_blank" rel="noreferrer">README</a> for help and documentation
+      check the
+      <a
+        href="https://github.com/jigglycrumb/splash-ds#readme"
+        target="_blank"
+        rel="noreferrer"
+        >README</a
+      >
+      for help and documentation
     </footer>
 
     <script>
@@ -52,13 +69,13 @@
 
         fetch(
           "https://maker.ifttt.com/trigger/visitor_" +
-          site +
-          "/with/key/dSscp_OKcfnlqc4jitN7yc?value1=" +
-          site +
-          "&value2=" +
-          document.location.href +
-          "&value3=" +
-          (document.referrer || "unknown"),
+            site +
+            "/with/key/dSscp_OKcfnlqc4jitN7yc?value1=" +
+            site +
+            "&value2=" +
+            document.location.href +
+            "&value3=" +
+            (document.referrer || "unknown"),
           { mode: "no-cors" }
         );
       }
