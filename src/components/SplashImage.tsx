@@ -1,13 +1,13 @@
 import React, { useRef } from "react";
 import { Image, Transformer } from "react-konva";
 
-type Props = {
+type SplashImageProps = {
   image: any
   keepRatio: boolean
   showTransformer: boolean
 }
 
-const SplashImage = (props: Props) => {
+const SplashImage = (props: SplashImageProps) => {
 
   const { image, keepRatio, showTransformer } = props
 
