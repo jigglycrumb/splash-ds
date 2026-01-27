@@ -6,6 +6,15 @@
 
 <br/>
 
+# NOTE
+
+This repository moved to Codeberg.
+
+New repo: https://codeberg.org/jiggly/splash-ds
+
+New website: https://jiggly.codeberg.page/splash-ds/
+
+
 ### Prerequisites
 
 You will need a Nintendo 3DS with Luma CFW installed.
