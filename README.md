@@ -1,7 +1,5 @@
 # splash-ds
 
-<br/>
-
 ## A boot splash creator for Nintendo 3DS systems
 
 <br/>
@@ -14,6 +12,8 @@ New repo: https://codeberg.org/jiggly/splash-ds
 
 New website: https://jiggly.codeberg.page/splash-ds/
 
+<br/>
+<br/>
 
 ### Prerequisites
 
